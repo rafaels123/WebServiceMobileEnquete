@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>WebServiceMobileEleicao</groupId>
+    <groupId>com.mobileeleicao.me</groupId>
     <artifactId>WebServiceMobileEleicao</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>Simple CXF JAX-RS webapp service using spring configuration</name>
+    <name>WebServiceMobileEleicao</name>
+        
+    <organization>
+		<name>ADS - TDSI</name>
+		<url>http://simaomenezesneto.com</url>
+	</organization>
+    
+    
     <description>Simple CXF JAX-RS webapp service using spring configuration</description>
     <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.version>1.8.6</jackson.version>
+		<springVersion>3.0.6.RELEASE</springVersion>
     </properties>
     <dependencies>
         <dependency>
@@ -40,8 +50,38 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>3.0.6.RELEASE</version>
-        </dependency>    
+            <version>${springVersion}</version>
+        </dependency>   
+        		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.6.4</version>
+		</dependency> 
     </dependencies>
     <build>
         <pluginManagement>

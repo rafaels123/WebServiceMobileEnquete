@@ -8,5 +8,7 @@ Class-Path: cxf-rt-frontend-jaxrs-2.6.2.jar cxf-api-2.6.2.jar woodstox
  LEASE.jar aopalliance-1.0.jar spring-beans-3.0.6.RELEASE.jar spring-c
  ore-3.0.6.RELEASE.jar spring-asm-3.0.6.RELEASE.jar commons-logging-1.
  1.1.jar spring-context-3.0.6.RELEASE.jar spring-aop-3.0.6.RELEASE.jar
-  spring-expression-3.0.6.RELEASE.jar
+  spring-expression-3.0.6.RELEASE.jar spring-webmvc-3.0.6.RELEASE.jar 
+ spring-context-support-3.0.6.RELEASE.jar slf4j-log4j12-1.6.3.jar slf4
+ j-api-1.6.4.jar log4j-1.2.16.jar
 
