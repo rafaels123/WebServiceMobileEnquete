@@ -71,7 +71,7 @@
 		</filter>
 	</appender>
 	
-	<logger name="br.com.m2msoutions">
+	<logger name="com.mobileenquete">
 		<level value="info" />
 	</logger>
 		
