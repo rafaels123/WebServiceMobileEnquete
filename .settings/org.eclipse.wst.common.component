@@ -139,6 +139,9 @@
     <dependent-module archiveName="postgresql-8.4-701.jdbc3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/postgresql/postgresql/8.4-701.jdbc3/postgresql-8.4-701.jdbc3.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
+    <dependent-module archiveName="javassist-3.12.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
     <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
     <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
   </wb-module>

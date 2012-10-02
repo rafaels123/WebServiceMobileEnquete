@@ -16,5 +16,5 @@ Class-Path: cxf-rt-frontend-jaxrs-2.6.2.jar cxf-api-2.6.2.jar woodstox
  ar hibernate-commons-annotations-3.2.0.Final.jar hibernate-jpa-2.0-ap
  i-1.0.0.Final.jar jta-1.1.jar hibernate-validator-4.0.0.GA.jar valida
  tion-api-1.0.0.GA.jar jaxb-api-2.1.jar stax-api-1.0-2.jar activation-
- 1.1.jar postgresql-8.4-701.jdbc3.jar
+ 1.1.jar postgresql-8.4-701.jdbc3.jar javassist-3.12.1.GA.jar
 
