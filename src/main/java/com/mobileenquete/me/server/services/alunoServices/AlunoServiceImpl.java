@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mobileenquete.me.entity.Aluno;
-import com.mobileenquete.me.server.dao.DaoAluno;
 import com.mobileenquete.me.server.remoteinterface.aluno.AlunoBusiness;
 
 /**
@@ -56,11 +55,6 @@ public class AlunoServiceImpl implements AlunoService{
 	public Aluno findByPrimaryKeyAluno(Long id) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-	
-	public void setDaoAluno(DaoAluno daoAuno) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@DELETE

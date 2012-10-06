@@ -17,7 +17,7 @@ import com.mobileenquete.me.server.dao.DaoAluno;
  *
  */
 @Transactional
-public class AlunoBusinessImp implements Serializable, AlunoBusiness{
+public class AlunoBusinessWSImp implements Serializable, AlunoBusiness{
 
 	private static final long serialVersionUID = -8981564612052969188L;
 
