@@ -3,8 +3,6 @@
  */
 package com.mobileenquete.me.server.dao;
 
-import java.io.Serializable;
-
 import org.springframework.stereotype.Component;
 
 import com.mobileenquete.me.entity.Aluno;
