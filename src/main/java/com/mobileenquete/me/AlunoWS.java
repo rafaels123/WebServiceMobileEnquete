@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mobileenquete.me.entity.Aluno;
 import com.mobileenquete.me.server.remoteinterface.aluno.AlunoBusiness;
+import com.mobileenquete.me.server.services.FacadeBusinessAluno;
 
 /**
  * @author simao
@@ -26,7 +27,7 @@ import com.mobileenquete.me.server.remoteinterface.aluno.AlunoBusiness;
 public class AlunoWS {
 	
 	@Autowired
-	private AlunoBusiness alunoBusiness;
+	private FacadeBusinessAluno facadeBusinessAluno;
 	
 	@GET
 	@Path("aluno/{id}")
