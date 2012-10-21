@@ -14,11 +14,11 @@ public interface BusinessAl {
 
 	public void setDaoAluno(DaoAluno daoAluno);
 
-	public Aluno findByPrimaryKeyAluno(Integer type);
+	public Aluno findByPrimaryKeyAluno(Long type);
 
 	public List<Aluno> loadAllAluno();
 
-	public void removeAluno(Integer object);
+	public void removeAluno(Long object);
 
 	public void storeAluno(Aluno aluno);
 

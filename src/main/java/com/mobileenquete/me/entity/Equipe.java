@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author simao
@@ -22,6 +23,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="tb_equipe")
+@XmlRootElement
 public class Equipe implements Serializable{
 	
 	private static final long serialVersionUID = 1741235279845592267L;

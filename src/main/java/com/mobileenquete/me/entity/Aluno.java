@@ -29,7 +29,7 @@ public class Aluno implements Serializable{
 	@Id
 	@SequenceGenerator(name = "seq", sequenceName = "sq_aluno_id")
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq")
-	private Integer id;
+	private Long id;
 	
 	@Column(name = "name", length=50)
 	private String name;
@@ -40,14 +40,14 @@ public class Aluno implements Serializable{
 	/**
 	 * @return the id
 	 */
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

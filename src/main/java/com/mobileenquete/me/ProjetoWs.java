@@ -21,27 +21,22 @@ import com.mobileenquete.me.server.business.BusinessFacede;
 public class ProjetoWs implements BusinessFacede<Projeto>{
 
 	public void save(Projeto entity) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void delete(Projeto entity) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void update(Projeto entity) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public List<Projeto> loadAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Projeto findById(Integer id) {
-		// TODO Auto-generated method stub
+	public Projeto findById(Long id) {
 		return null;
 	}
 

@@ -63,7 +63,7 @@ public class AlunoWs implements BusinessFacede<Aluno>{
 	@GET
 	@Path("/{id}")
 	@Produces({"application/xml"})
-	public Aluno findById(@PathParam("id") Integer id) {
+	public Aluno findById(@PathParam("id") Long id) {
 		return businessAl.findByPrimaryKeyAluno(id);
 	}
 }

@@ -33,7 +33,7 @@ public class BusinessAlunoImp  implements Serializable, BusinessAl {
 	}
 	
 	@Transactional
-	public Aluno findByPrimaryKeyAluno(Integer type) {
+	public Aluno findByPrimaryKeyAluno(Long type) {
 		return getDaoAluno().findByPrimaryKey(type);
 	}
 	
@@ -41,7 +41,7 @@ public class BusinessAlunoImp  implements Serializable, BusinessAl {
 	public List<Aluno> loadAllAluno() {
 		return getDaoAluno().loadAll();
 	}
-	public void removeAluno(Integer object) {
+	public void removeAluno(Long object) {
 		getDaoAluno().remove(object);
 		
 	}

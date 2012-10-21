@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author simao
@@ -24,6 +25,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="tb_projeto")
+@XmlRootElement
 public class Projeto implements Serializable{
 	
 	private static final long serialVersionUID = 3852074577149987562L;

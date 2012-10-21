@@ -15,32 +15,32 @@ import com.mobileenquete.me.entity.Aluno;
  *
  */
 @Component
-public class DaoAluno extends DaoAbstract<Aluno, Integer>{
+public class DaoAluno extends DaoAbstract<Aluno, Long>{
 
 	@Override
-	protected Integer getId(Aluno aluno) {
+	protected Long getId(Aluno aluno) {
 		// TODO Auto-generated method stub
 		return aluno.getId();
 	}
 	
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Aluno> loadAll() {
-		List<Aluno> alunos = new ArrayList<Aluno>();
-		try{
-			String hql = "from Aluno";
-			
-			getSession().beginTransaction();
-			
-			alunos.addAll(getSession().createQuery(hql).list());
-			
-			getSession().beginTransaction().commit();
-			getSession().close();
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return alunos;
-	}
+//	@SuppressWarnings("unchecked")
+//	@Override
+//	public List<Aluno> loadAll() {
+//		List<Aluno> alunos = new ArrayList<Aluno>();
+//		try{
+//			String hql = "from Aluno";
+//			
+//			getSession().beginTransaction();
+//			
+//			alunos.addAll(getSession().createQuery(hql).list());
+//			
+//			getSession().beginTransaction().commit();
+//			getSession().close();
+//			
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return alunos;
+//	}
 
 }

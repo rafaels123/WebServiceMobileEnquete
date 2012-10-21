@@ -129,6 +129,7 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
     @SuppressWarnings("unchecked")
 	public List<Entity> loadAll() {
         try {
+        	Transaction t = getSession().beginTransaction();
         	org.hibernate.Query query = null; 
         	if(getQRNAll() != null){
         		query = this.sessionFactory.getCurrentSession().getNamedQuery(getQRNAll());
@@ -211,7 +212,6 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
 	/**
 	 * Cria um objeto Criteria a partir da sessao.
 	 * 
-	 * @author altair.aquino
 	 * @return Criteria (Hibernate)
 	 */
 	protected Criteria createCriteria() {

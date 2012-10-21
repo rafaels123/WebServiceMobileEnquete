@@ -8,6 +8,6 @@ public interface BusinessFacede<Entity> {
 	public void delete(Entity entity);
 	public void update(Entity entity);
 	public List<Entity> loadAll();
-	public Entity findById(Integer id);
+	public Entity findById(Long id);
 	
 }
