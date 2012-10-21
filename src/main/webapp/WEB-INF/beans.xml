@@ -74,6 +74,7 @@ http://cxf.apache.org/schemas/jaxrs.xsd">
 			<bean class="com.mobileenquete.me.HelloWorld" />
 			<ref bean="alunoWs"/>
 			<ref bean="equipeWs"/>
+			<ref bean="projetoWs"/>
 		</jaxrs:serviceBeans>
 		<jaxrs:extensionMappings>
 			<entry key="xml" value="application/xml" />

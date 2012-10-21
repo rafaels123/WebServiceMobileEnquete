@@ -5,12 +5,18 @@ package com.mobileenquete.me;
 
 import java.util.List;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.mobileenquete.me.entity.Aluno;
 import com.mobileenquete.me.entity.Projeto;
 import com.mobileenquete.me.server.business.BusinessFacede;
+import com.mobileenquete.me.server.business.BusinessProjeto;
 
 /**
  * @author Simão Neto
@@ -20,6 +26,9 @@ import com.mobileenquete.me.server.business.BusinessFacede;
 @Component(value="projetoWs")
 public class ProjetoWs implements BusinessFacede<Projeto>{
 
+	@Autowired
+	private BusinessProjeto businessProjeto;
+	
 	public void save(Projeto entity) {
 		
 	}
@@ -32,12 +41,17 @@ public class ProjetoWs implements BusinessFacede<Projeto>{
 		
 	}
 
+	@GET
+	@Path("/projetos")
+	@Produces("application/xml")
 	public List<Projeto> loadAll() {
-		return null;
+		return businessProjeto.loadAllProjeto();
 	}
 
-	public Projeto findById(Long id) {
-		return null;
+	@GET
+	@Path("/{id}")
+	@Produces("application/xml")
+	public Projeto findById(@PathParam("id") Long id) {
+		return businessProjeto.findByPrimaryKeyAluno(id);
 	}
-
 }
