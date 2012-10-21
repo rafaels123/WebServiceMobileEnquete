@@ -3,10 +3,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mobileeleicao.me</groupId>
-    <artifactId>WebServiceMobileEleicao</artifactId>
+    <artifactId>WebServiceMobileEnquete</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>WebServiceMobileEleicao</name>
+    <name>WebServiceMobileEnquete</name>
         
     <organization>
 		<name>ADS - TDSI</name>

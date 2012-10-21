@@ -4,10 +4,15 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,11 +20,9 @@ import com.mobileenquete.me.server.dao.exception.DaoException;
     
 public abstract class DaoAbstract<Entity, PkType extends Serializable> implements Dao<Entity, PkType> {
 
-	private static final long serialVersionUID = -886675675206490103L;
-
 	@Autowired
 	private SessionFactory sessionFactory;
-    
+	
 	private Class<Entity> classEntity;
 	
 	@SuppressWarnings("unchecked")
@@ -49,7 +52,6 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
     	return classEntity;
     }
 
-    
     public void remove(PkType object) {
         if (object == null) {
             throw new IllegalArgumentException();
@@ -62,8 +64,7 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
         }
     }
     
-    
-	public List<Entity> removes(List<Entity> object) {
+    public List<Entity> removes(List<Entity> object) {
     	if (object == null) {
     		throw new IllegalArgumentException();
     	}
@@ -79,24 +80,21 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
     }
 
     @SuppressWarnings("unchecked")
-	
-    public Entity findByPrimaryKey(PkType type){
+	public Entity findByPrimaryKey(PkType type){
+    	Transaction t = getSession().beginTransaction();
     	return (Entity)this.sessionFactory.getCurrentSession().get(getClassEntity(), type);
     }
 
-    
     @SuppressWarnings("unchecked")
 	public <T> T find(Class<T> arg0, Object arg1) {
 		return (T)this.sessionFactory.getCurrentSession().get(arg0, (Serializable)arg1);
 	}
     
-    
     public Entity find(Serializable arg1) {
     	return find(classEntity, arg1);
     }
 
-	
-    public Entity store(Entity object) {
+	public Entity store(Entity object) {
         if (object == null) {
             throw new IllegalArgumentException();
         }
@@ -112,7 +110,6 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
         }
         return object;
     }
-	
 	
 	public List<Entity> stores(List<Entity> object) {
 		if (object == null) {
@@ -130,8 +127,7 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
 	}
 
     @SuppressWarnings("unchecked")
-	
-    public List<Entity> loadAll() {
+	public List<Entity> loadAll() {
         try {
         	org.hibernate.Query query = null; 
         	if(getQRNAll() != null){
@@ -212,7 +208,12 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
     	return loadSubList(offSet, maxResult, (Order[])null);
     }
     
-	
+	/**
+	 * Cria um objeto Criteria a partir da sessao.
+	 * 
+	 * @author altair.aquino
+	 * @return Criteria (Hibernate)
+	 */
 	protected Criteria createCriteria() {
 		Criteria criteria = null;
 		try {	
@@ -227,6 +228,16 @@ public abstract class DaoAbstract<Entity, PkType extends Serializable> implement
 		Query query = null;
 		try {	
 			query = getSession().createQuery(hql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return query;
+	}
+	
+	protected SQLQuery createSqlQuery(String sql) {
+		SQLQuery query = null;
+		try {	
+			query = getSession().createSQLQuery(sql);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="2.0">
-  <wb-module deploy-name="WebServiceMobileEleicao-1.0">
-    <property name="context-root" value="WebServiceMobileEleicao"/>
+  <wb-module deploy-name="WebServiceMobileEnquete-1.0">
+    <property name="context-root" value="WebServiceMobileEnquete"/>
     <wb-resource deploy-path="/" source-path="src/main/webapp"/>
     <property name="java-output-path" value="/target/classes"/>
     <dependent-module archiveName="cxf-rt-frontend-jaxrs-2.6.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/apache/cxf/cxf-rt-frontend-jaxrs/2.6.2/cxf-rt-frontend-jaxrs-2.6.2.jar">

@@ -11,39 +11,59 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.mobileenquete.me.entity.Aluno;
-import com.mobileenquete.me.server.remoteinterface.aluno.AlunoBusiness;
-import com.mobileenquete.me.server.services.FacadeBusinessAluno;
+import com.mobileenquete.me.server.business.BusinessAl;
+import com.mobileenquete.me.server.business.BusinessFacede;
 
 /**
- * @author simao
+ * @author Simão Neto
  *
  */
-@Path("alunoservice")
-public class AlunoWS {
-	
+@Path("/aluno")
+@Component(value="alunoWs")
+public class AlunoWs implements BusinessFacede<Aluno>{
+
 	@Autowired
-	private FacadeBusinessAluno facadeBusinessAluno;
+	private BusinessAl businessAl;
 	
-	@GET
-	@Path("aluno/{id}")
-	@Consumes({ MediaType.APPLICATION_XML })
-	@Produces({ MediaType.APPLICATION_XML })
-	public List<Aluno> getAlunos(@PathParam("id") Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public AlunoWs() {
 	}
 	
 	@POST
-	@Path("aluno")
-	@Consumes({ MediaType.APPLICATION_XML })
-	@Produces({ MediaType.APPLICATION_XML })
-	public void storeAluno(Aluno aluno) {
+	@Produces({"application/xml"})
+	@Consumes("application/xml")
+    @Path("/add_aluno")
+	public void save(Aluno entity) {
+		businessAl.storeAluno(entity);
+	}
+
+
+	public void delete(Aluno entity) {
 		
 	}
 
+
+	public void update(Aluno entity) {
+		
+	}
+
+
+	@GET
+	@Produces({"application/xml"})
+	@Path("/alunos")
+	public List<Aluno> loadAll() {
+		return businessAl.loadAllAluno();
+	}
+
+
+	@GET
+	@Path("/{id}")
+	@Produces({"application/xml"})
+	public Aluno findById(@PathParam("id") Integer id) {
+		return businessAl.findByPrimaryKeyAluno(id);
+	}
 }

@@ -23,7 +23,7 @@ import javax.persistence.Table;
  * Class que representa um projeto
  */
 @Entity
-@Table(name="tb_aluno")
+@Table(name="tb_projeto")
 public class Projeto implements Serializable{
 	
 	private static final long serialVersionUID = 3852074577149987562L;
@@ -38,7 +38,7 @@ public class Projeto implements Serializable{
 	@Column(name = "description", length=300)
 	private String description;
 	
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="id_equipe")
 	private Equipe equipe;
 

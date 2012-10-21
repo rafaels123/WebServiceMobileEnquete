@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author simao
@@ -20,6 +21,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="tb_aluno")
+@XmlRootElement
 public class Aluno implements Serializable{
 	
 	private static final long serialVersionUID = -3378164210002817874L;
@@ -27,7 +29,7 @@ public class Aluno implements Serializable{
 	@Id
 	@SequenceGenerator(name = "seq", sequenceName = "sq_aluno_id")
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq")
-	private Long id;
+	private Integer id;
 	
 	@Column(name = "name", length=50)
 	private String name;
@@ -38,14 +40,14 @@ public class Aluno implements Serializable{
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

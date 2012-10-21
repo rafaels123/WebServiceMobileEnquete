@@ -6,6 +6,7 @@ package com.mobileenquete.me.entity;
 import java.io.Serializable;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -44,6 +44,9 @@ public class Enquete implements Serializable{
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="id_aluno")
 	private Aluno aluno;
+	
+	@Column
+	private Integer totalVoto;
 
 	/**
 	 * @return the id
@@ -100,6 +103,17 @@ public class Enquete implements Serializable{
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
 	}
+
+	public Integer getTotalVoto() {
+		return totalVoto;
+	}
+
+	public void setTotalVoto(Integer totalVoto) {
+		this.totalVoto = totalVoto;
+	}
+	
+	
+	
 	
 	
 	
