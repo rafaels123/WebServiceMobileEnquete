@@ -42,7 +42,7 @@ public class AlunoWs implements BusinessFacede<Aluno>{
 	}
 
 
-	public void delete(Aluno entity) {
+	public void delete(Long id) {
 		
 	}
 

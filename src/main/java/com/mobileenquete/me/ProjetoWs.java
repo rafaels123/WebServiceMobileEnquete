@@ -5,6 +5,7 @@ package com.mobileenquete.me;
 
 import java.util.List;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -33,8 +34,10 @@ public class ProjetoWs implements BusinessFacede<Projeto>{
 		
 	}
 
-	public void delete(Projeto entity) {
-		
+	@DELETE
+	@Path("/delete/{id}")
+	public void delete(@PathParam("id") Long id) {
+		businessProjeto.removeProjeto(id);
 	}
 
 	public void update(Projeto entity) {

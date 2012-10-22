@@ -22,7 +22,7 @@ public interface BusinessEquipe {
 
 	public List<Equipe> loadAllEquipe();
 
-	public void removeEquipe(Integer object);
+	public void removeEquipe(Long object);
 
 	public void storeEquipe(Equipe equipe);
 

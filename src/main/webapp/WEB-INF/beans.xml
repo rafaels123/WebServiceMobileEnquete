@@ -71,7 +71,7 @@ http://cxf.apache.org/schemas/jaxrs.xsd">
 
 	<jaxrs:server id="services" address="/">
 		<jaxrs:serviceBeans>
-			<bean class="com.mobileenquete.me.HelloWorld" />
+<!-- 			<bean class="com.mobileenquete.me.HelloWorld" /> -->
 			<ref bean="alunoWs"/>
 			<ref bean="equipeWs"/>
 			<ref bean="projetoWs"/>
